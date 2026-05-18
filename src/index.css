@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-content: #ffffff;
+  --bg-sidebar: #f5f5f6;
+  --bg-elevated: #ffffff;
+  --bg-hover: rgba(0, 0, 0, 0.04);
+  --bg-selected: #2b7fff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #9a9a9a;
+  --text-tertiary: #b8b8b8;
+  --divider: #ededed;
+  --field-bg: rgba(0, 0, 0, 0.035);
+  --accent: #2b7fff;
+  --shadow-pop: 0 6px 28px rgba(0, 0, 0, 0.16), 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg-content: #1a1a1c;
+  --bg-sidebar: #232326;
+  --bg-elevated: #2a2a2e;
+  --bg-hover: rgba(255, 255, 255, 0.055);
+  --bg-selected: #2b7fff;
+  --text-primary: #f2f2f3;
+  --text-secondary: #8a8a8f;
+  --text-tertiary: #6a6a6f;
+  --divider: #353539;
+  --field-bg: rgba(255, 255, 255, 0.06);
+  --accent: #3b88ff;
+  --shadow-pop: 0 8px 32px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-content);
+  color: var(--text-primary);
+  overscroll-behavior: none;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+::selection {
+  background: rgba(43, 127, 255, 0.22);
+}
+
+/* Subtle scrollbars */
+.scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+}
+.scroll-area::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.dark .scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  background-clip: content-box;
+}
+.scroll-area::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+  background-clip: content-box;
+}
+
+.bg-content {
+  background: var(--bg-content);
+}
+.bg-sidebar {
+  background: var(--bg-sidebar);
+}
+.bg-elevated {
+  background: var(--bg-elevated);
+}
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+.border-divider {
+  border-color: var(--divider);
+}
+.field-bg {
+  background: var(--field-bg);
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.no-drag {
+  -webkit-user-drag: none;
+  user-select: none;
+}
